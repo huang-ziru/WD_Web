@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="17" time="1839.558" timestamp="2022-07-25T12:24:40.613920" hostname="huangzi1"><testcase classname="test_VSTS31408" name="test_BOMEdit" time="143.342" /><testcase classname="test_VSTS38281" name="test_audit_generate" time="127.773" /><testcase classname="test_VSTS43253" name="test_materials_report" time="135.883" /><testcase classname="test_VSTS29668" name="test_refresh" time="56.272"><failure message="assert 1 == 5&#10; +  where 1 = len([&lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;9cf603c50634c2b42faa3a9b2155eeec&quot;, element=&quot;d6b5df49-6b22-4139-b71c-e8360301b586&quot;)&gt;])">browser = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="9cf603c50634c2b42faa3a9b2155eeec")&gt;
+
+    def test_refresh(browser):
+        time.sleep(5)
+        BaseFun(browser).grant_Allpermission()
+        browser.find_element(By.XPATH, "//tr/td/div[text()='Order']").click()
+        time.sleep(5)
+        browser.find_element(By.XPATH, "//input[@class = 'Tab_Manu_bar_Margin Tab_Menu_Bar_Search_Box']").send_keys("test1")
+        order_name = browser.find_elements(By.XPATH, "//table[@class='Order_Table_body_Style_Collapse']/tbody/tr")[1].find_elements(By.TAG_NAME,"td")[1]
+        assert 'test1' in order_name.text
+        browser.find_element(By.XPATH, "//table[@class='Tab_Manu_bar_Wide_Margin']/tbody/tr/td/table/tbody/tr/td/button").click()
+        time.sleep(2)
+        order_list = browser.find_elements(By.XPATH, "//table[@class='Order_Table_body_Style_Collapse']/tbody/tr")
+&gt;       assert len(order_list) == 5
+E       assert 1 == 5
+E        +  where 1 = len([&lt;selenium.webdriver.remote.webelement.WebElement (session="9cf603c50634c2b42faa3a9b2155eeec", element="d6b5df49-6b22-4139-b71c-e8360301b586")&gt;])
+
+test_VSTS29668.py:20: AssertionError</failure></testcase><testcase classname="test_VSTS42107" name="test_scale_report" time="86.427" /><testcase classname="test_VSTS91537" name="test_BOM_add_Active" time="85.925"><failure message="selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: {Alert text : &#10;Message: unexpected alert open: {Alert text : }&#10;  (Session info: chrome=103.0.5060.114)&#10;Stacktrace:&#10;Backtrace:&#10;&#09;Ordinal0 [0x01175FD3+2187219]&#10;&#09;Ordinal0 [0x0110E6D1+1763025]&#10;&#09;Ordinal0 [0x01023E78+802424]&#10;&#09;Ordinal0 [0x0107CE32+1166898]&#10;&#09;Ordinal0 [0x0106C9A6+1100198]&#10;&#09;Ordinal0 [0x01046F80+946048]&#10;&#09;Ordinal0 [0x01047E76+949878]&#10;&#09;GetHandleVerifier [0x014190C2+2721218]&#10;&#09;GetHandleVerifier [0x0140AAF0+2662384]&#10;&#09;GetHandleVerifier [0x0120137A+526458]&#10;&#09;GetHandleVerifier [0x01200416+522518]&#10;&#09;Ordinal0 [0x01114EAB+1789611]&#10;&#09;Ordinal0 [0x011197A8+1808296]&#10;&#09;Ordinal0 [0x01119895+1808533]&#10;&#09;Ordinal0 [0x011226C1+1844929]&#10;&#09;BaseThreadInitThunk [0x778DFA29+25]&#10;&#09;RtlGetAppContainerNamedObjectPath [0x77A87A9E+286]&#10;&#09;RtlGetAppContainerNamedObjectPath [0x77A87A6E+238]">browser = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="b40488fd40cde2129506ae5938962430")&gt;
+
+    def test_BOM_add_Active(browser):
+        time.sleep(5)
+        BaseFun(browser).grant_Allpermission()
+        browser.find_element(By.XPATH, "//tr/td/div[text()='Material']").click()
+        browser.find_element(By.XPATH, "//tr/td/div[text()='BOM Exceptions']").click()
+        time.sleep(10)
+        bomName = BaseFun(browser).Random_Str(5)
+        MaterialPage(browser).Add_BOM(bomName)
+        browser.find_element(By.XPATH, "//button[@class='gwt-Button OkStyle']").click()
+        browser.refresh()
+        time.sleep(6)
+        # edit the pending BOM
+&gt;       browser.find_element(By.XPATH, "//td[text()='"+bomName+"']/../td[7]").click()
+
+test_VSTS91537.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+f:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py:1248: in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+f:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py:425: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x0000012AFF266D30&gt;
+response = {'status': 500, 'value': '{"value":{"data":{"text":"{Alert text : "},"error":"unexpected alert open","message":"unexpe...\n\\tRtlGetAppContainerNamedObjectPath [0x77A87A9E+286]\\n\\tRtlGetAppContainerNamedObjectPath [0x77A87A6E+238]\\n"}}'}
+
+    def check_response(self, response: Dict[str, Any]) -&gt; None:
+        """
+        Checks that a JSON response from the WebDriver does not have an error.
+    
+        :Args:
+         - response - The JSON response from the WebDriver server as a dictionary
+           object.
+    
+        :Raises: If the response contains an error message.
+        """
+        status = response.get('status', None)
+        if not status or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen: str = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get('value', None)
+            if value_json and isinstance(value_json, str):
+                import json
+                try:
+                    value = json.loads(value_json)
+                    if len(value.keys()) == 1:
+                        value = value['value']
+                    status = value.get('error', None)
+                    if not status:
+                        status = value.get("status", ErrorCode.UNKNOWN_ERROR)
+                        message = value.get("value") or value.get("message")
+                        if not isinstance(message, str):
+                            value = message
+                            message = message.get('message')
+                    else:
+                        message = value.get('message', None)
+                except ValueError:
+                    pass
+    
+        exception_class: Type[WebDriverException]
+        if status in ErrorCode.NO_SUCH_ELEMENT:
+            exception_class = NoSuchElementException
+        elif status in ErrorCode.NO_SUCH_FRAME:
+            exception_class = NoSuchFrameException
+        elif status in ErrorCode.NO_SUCH_SHADOW_ROOT:
+            exception_class = NoSuchShadowRootException
+        elif status in ErrorCode.NO_SUCH_WINDOW:
+            exception_class = NoSuchWindowException
+        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:
+            exception_class = StaleElementReferenceException
+        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:
+            exception_class = ElementNotVisibleException
+        elif status in ErrorCode.INVALID_ELEMENT_STATE:
+            exception_class = InvalidElementStateException
+        elif status in ErrorCode.INVALID_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:
+            exception_class = InvalidSelectorException
+        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:
+            exception_class = ElementNotSelectableException
+        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:
+            exception_class = ElementNotInteractableException
+        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:
+            exception_class = InvalidCookieDomainException
+        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:
+            exception_class = UnableToSetCookieException
+        elif status in ErrorCode.TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.SCRIPT_TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.UNKNOWN_ERROR:
+            exception_class = WebDriverException
+        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:
+            exception_class = UnexpectedAlertPresentException
+        elif status in ErrorCode.NO_ALERT_OPEN:
+            exception_class = NoAlertPresentException
+        elif status in ErrorCode.IME_NOT_AVAILABLE:
+            exception_class = ImeNotAvailableException
+        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:
+            exception_class = ImeActivationFailedException
+        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:
+            exception_class = MoveTargetOutOfBoundsException
+        elif status in ErrorCode.JAVASCRIPT_ERROR:
+            exception_class = JavascriptException
+        elif status in ErrorCode.SESSION_NOT_CREATED:
+            exception_class = SessionNotCreatedException
+        elif status in ErrorCode.INVALID_ARGUMENT:
+            exception_class = InvalidArgumentException
+        elif status in ErrorCode.NO_SUCH_COOKIE:
+            exception_class = NoSuchCookieException
+        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:
+            exception_class = ScreenshotException
+        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:
+            exception_class = ElementClickInterceptedException
+        elif status in ErrorCode.INSECURE_CERTIFICATE:
+            exception_class = InsecureCertificateException
+        elif status in ErrorCode.INVALID_COORDINATES:
+            exception_class = InvalidCoordinatesException
+        elif status in ErrorCode.INVALID_SESSION_ID:
+            exception_class = InvalidSessionIdException
+        elif status in ErrorCode.UNKNOWN_METHOD:
+            exception_class = UnknownMethodException
+        else:
+            exception_class = WebDriverException
+        if not value:
+            value = response['value']
+        if isinstance(value, str):
+            raise exception_class(value)
+        if message == "" and 'message' in value:
+            message = value['message']
+    
+        screen = None  # type: ignore[assignment]
+        if 'screen' in value:
+            screen = value['screen']
+    
+        stacktrace = None
+        st_value = value.get('stackTrace') or value.get('stacktrace')
+        if st_value:
+            if isinstance(st_value, str):
+                stacktrace = st_value.split('\n')
+            else:
+                stacktrace = []
+                try:
+                    for frame in st_value:
+                        line = self._value_or_default(frame, 'lineNumber', '')
+                        file = self._value_or_default(frame, 'fileName', '&lt;anonymous&gt;')
+                        if line:
+                            file = "%s:%s" % (file, line)
+                        meth = self._value_or_default(frame, 'methodName', '&lt;anonymous&gt;')
+                        if 'className' in frame:
+                            meth = "%s.%s" % (frame['className'], meth)
+                        msg = "    at %s (%s)"
+                        msg = msg % (meth, file)
+                        stacktrace.append(msg)
+                except TypeError:
+                    pass
+        if exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if 'data' in value:
+                alert_text = value['data'].get('text')
+            elif 'alert' in value:
+                alert_text = value['alert'].get('text')
+&gt;           raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here
+E           selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: {Alert text : 
+E           Message: unexpected alert open: {Alert text : }
+E             (Session info: chrome=103.0.5060.114)
+E           Stacktrace:
+E           Backtrace:
+E           	Ordinal0 [0x01175FD3+2187219]
+E           	Ordinal0 [0x0110E6D1+1763025]
+E           	Ordinal0 [0x01023E78+802424]
+E           	Ordinal0 [0x0107CE32+1166898]
+E           	Ordinal0 [0x0106C9A6+1100198]
+E           	Ordinal0 [0x01046F80+946048]
+E           	Ordinal0 [0x01047E76+949878]
+E           	GetHandleVerifier [0x014190C2+2721218]
+E           	GetHandleVerifier [0x0140AAF0+2662384]
+E           	GetHandleVerifier [0x0120137A+526458]
+E           	GetHandleVerifier [0x01200416+522518]
+E           	Ordinal0 [0x01114EAB+1789611]
+E           	Ordinal0 [0x011197A8+1808296]
+E           	Ordinal0 [0x01119895+1808533]
+E           	Ordinal0 [0x011226C1+1844929]
+E           	BaseThreadInitThunk [0x778DFA29+25]
+E           	RtlGetAppContainerNamedObjectPath [0x77A87A9E+286]
+E           	RtlGetAppContainerNamedObjectPath [0x77A87A6E+238]
+
+f:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py:246: UnexpectedAlertPresentException</failure></testcase><testcase classname="test_VSTS31357" name="test_BOMdelete" time="252.228" /><testcase classname="test_VSTS43293" name="test_Scale_date" time="93.648"><failure message="AssertionError: assert '4/14/22, 12:00:00 PM' == '4/14/22'&#10;  - 4/14/22&#10;  + 4/14/22, 12:00:00 PM">browser = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="69bf19e4b0e080b672e058df70ef468e")&gt;
+
+    def test_Scale_date(browser):
+        # add all permission
+        BaseFun(browser).grant_Allpermission()
+        # 1.Navigate to Equipment page
+        EquipmentPage(browser).go_to_Equipment()
+        # 2.Select a scale
+        scales = browser.find_elements(By.XPATH, "//table[@class='List_Table_Border_Style']")
+        editScale = scales[1].find_elements(By.TAG_NAME,  "img")
+        editScale[2].click()
+        time.sleep(3)
+        # 3.change last check date and expiration date
+        # rows = browser.find_elements(By.XPATH, "//table[@class='List_Table_Border_Style']/tbody/tr")
+        # print(len(rows))
+        # cols = rows[8].find_elements(By.TAG_NAME,  "td")
+        # print(len(cols))
+        # Expiration Period (days)
+        browser.find_element(By.XPATH, "//div[text()='Calibration Expiration Date:']/../../td[2]//input").send_keys("4/"+str(random.randint(1, 30))+"/22, 12:00:00 PM")
+        time.sleep(2)
+        browser.find_element(By.XPATH, "//table[@class='Edit_Sub_Panel']/../../td[2]//tr[@class='List_Background_Color']/../tr[2]").click()
+        time.sleep(2)
+        browser.find_element(By.XPATH, "//tr[@id='clicked_Row_Style']/td[4]").click()
+        time.sleep(3)
+        Period = browser.find_element(By.NAME, "expirationPeriod")
+        Period.clear()
+        Period.send_keys("556")
+        Period.send_keys(Keys.ENTER)
+        time.sleep(3)
+        # last check date
+        last_check_date = browser.find_element(By.XPATH, "//tr[@id='clicked_Row_Style']/td[5]")
+        last_check_date.click()
+        time.sleep(3)
+        CheckDate = browser.find_element(By.XPATH, "//tr[@id='clicked_Row_Style']/td[5]/input")
+        CheckDate.clear()
+        date = "4/"+str(random.randint(1, 30))+"/22, 12:00:00 PM"
+        CheckDate.send_keys(date)
+        time.sleep(2)
+        CheckDate.send_keys(Keys.ENTER)
+        time.sleep(3)
+        # get data
+        check_date = last_check_date.text.split(',')[0]
+        time.sleep(3)
+        expiration_date = browser.find_element(By.XPATH, "//tr[@id='clicked_Row_Style']/td[6]").text.split(',')[0]
+        print(check_date)
+        print(expiration_date)
+        time.sleep(3)
+        apply = browser.find_element(By.XPATH, "//button[text()='Apply']")
+        if apply.is_enabled():
+            apply.click()
+            time.sleep(3)
+        # 4. check report
+        ReportPage(browser).go_to_Report()
+        time.sleep(3)
+        # materials report
+        try:
+            browser.find_element(By.XPATH, "//div[text()='Scales']").click()
+        except ElementNotInteractableException:
+            browser.find_element(By.XPATH, "//div[text()='Audits']").click()
+            browser.find_element(By.XPATH, "//div[text()='Scales']").click()
+        time.sleep(3)
+        browser.find_element(By.XPATH, "//button[text()='Generate Audit']").click()
+        time.sleep(3)
+        rows = browser.find_elements(By.XPATH, "//table[@class='Permission_Table_body_Style']/tbody/tr")
+        rows[1].find_element(By.TAG_NAME,  "img").click()
+        time.sleep(3)
+        date = browser.find_elements(By.XPATH, "//td[@class='Edit_Cell']")
+&gt;       assert date[19].text == check_date
+E       AssertionError: assert '4/14/22, 12:00:00 PM' == '4/14/22'
+E         - 4/14/22
+E         + 4/14/22, 12:00:00 PM
+
+test_VSTS43293.py:79: AssertionError</failure></testcase><testcase classname="test_VSTS42288" name="test_BOMAdd_modify" time="130.997" /><testcase classname="test_VSTS45683" name="test_MaterialStatus" time="97.795"><failure message="selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//td[text()='07/25/22, 12:45:14 PM']/../td[5]&quot;}&#10;  (Session info: chrome=103.0.5060.114)&#10;Stacktrace:&#10;Backtrace:&#10;&#09;Ordinal0 [0x01175FD3+2187219]&#10;&#09;Ordinal0 [0x0110E6D1+1763025]&#10;&#09;Ordinal0 [0x01023E78+802424]&#10;&#09;Ordinal0 [0x01051C10+990224]&#10;&#09;Ordinal0 [0x01051EAB+990891]&#10;&#09;Ordinal0 [0x0107EC92+1174674]&#10;&#09;Ordinal0 [0x0106CBD4+1100756]&#10;&#09;Ordinal0 [0x0107CFC2+1167298]&#10;&#09;Ordinal0 [0x0106C9A6+1100198]&#10;&#09;Ordinal0 [0x01046F80+946048]&#10;&#09;Ordinal0 [0x01047E76+949878]&#10;&#09;GetHandleVerifier [0x014190C2+2721218]&#10;&#09;GetHandleVerifier [0x0140AAF0+2662384]&#10;&#09;GetHandleVerifier [0x0120137A+526458]&#10;&#09;GetHandleVerifier [0x01200416+522518]&#10;&#09;Ordinal0 [0x01114EAB+1789611]&#10;&#09;Ordinal0 [0x011197A8+1808296]&#10;&#09;Ordinal0 [0x01119895+1808533]&#10;&#09;Ordinal0 [0x011226C1+1844929]&#10;&#09;BaseThreadInitThunk [0x778DFA29+25]&#10;&#09;RtlGetAppContainerNamedObjectPath [0x77A87A9E+286]&#10;&#09;RtlGetAppContainerNamedObjectPath [0x77A87A6E+238]">browser = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="ffee01d343b3afe1cbaac5529c867ddd")&gt;
+
+    def test_MaterialStatus(browser):
+        time.sleep(5)
+        BaseFun(browser).grant_Allpermission()
+        browser.find_element(By.XPATH, "//tr/td/div[text()='Material']").click()
+        time.sleep(10)
+        pending_BOM = browser.find_elements(By.XPATH, "//td[text()='Pending']/../td[6]")
+        pending_BOM[2].click()
+        time.sleep(2)
+        browser.find_element(By.XPATH, "//input[@name='weighNote']/../../td[2]/button").click()
+        time.sleep(2)
+        browser.find_element(By.XPATH, "//textarea[@class='NoteDialogTextArea']").clear()
+        browser.find_element(By.XPATH, "//textarea[@class='NoteDialogTextArea']").send_keys("Weigh Notes")
+        browser.find_element(By.ID, "Dialogbox_Bottom_OK_Button_Id").click()
+        time.sleep(3)
+        browser.find_element(By.XPATH, "//button[text()='Submit']").click()
+        time.sleep(2)
+        timedate = (datetime.datetime.now()+datetime.timedelta(minutes=1)).strftime("%m/%d/%y, %I:%M:%S %p")
+        if timedate[10] == '0':
+            timedate = (timedate[:10]+timedate[11:]).lstrip('0')
+        time.sleep(3)
+        browser.find_element(By.XPATH, "//input[@class='Date_TextBox_Style']").send_keys(timedate)
+        time.sleep(5)
+        browser.find_element(By.XPATH, "//button[@id='Dialogbox_Bottom_OK_Button_Id']").click()
+        assert 'Submit was successful!' in BaseFun(browser).get_AlterMessage()
+        time.sleep(13)
+&gt;       BOM_status1 = browser.find_element(By.XPATH, "//td[text()='"+timedate+"']/../td[5]").text
+
+test_VSTS45683.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+f:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py:1248: in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+f:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py:425: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x0000012AFF2A1730&gt;
+response = {'status': 404, 'value': '{"value":{"error":"no such element","message":"no such element: Unable to locate element: {\...\n\\tRtlGetAppContainerNamedObjectPath [0x77A87A9E+286]\\n\\tRtlGetAppContainerNamedObjectPath [0x77A87A6E+238]\\n"}}'}
+
+    def check_response(self, response: Dict[str, Any]) -&gt; None:
+        """
+        Checks that a JSON response from the WebDriver does not have an error.
+    
+        :Args:
+         - response - The JSON response from the WebDriver server as a dictionary
+           object.
+    
+        :Raises: If the response contains an error message.
+        """
+        status = response.get('status', None)
+        if not status or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen: str = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get('value', None)
+            if value_json and isinstance(value_json, str):
+                import json
+                try:
+                    value = json.loads(value_json)
+                    if len(value.keys()) == 1:
+                        value = value['value']
+                    status = value.get('error', None)
+                    if not status:
+                        status = value.get("status", ErrorCode.UNKNOWN_ERROR)
+                        message = value.get("value") or value.get("message")
+                        if not isinstance(message, str):
+                            value = message
+                            message = message.get('message')
+                    else:
+                        message = value.get('message', None)
+                except ValueError:
+                    pass
+    
+        exception_class: Type[WebDriverException]
+        if status in ErrorCode.NO_SUCH_ELEMENT:
+            exception_class = NoSuchElementException
+        elif status in ErrorCode.NO_SUCH_FRAME:
+            exception_class = NoSuchFrameException
+        elif status in ErrorCode.NO_SUCH_SHADOW_ROOT:
+            exception_class = NoSuchShadowRootException
+        elif status in ErrorCode.NO_SUCH_WINDOW:
+            exception_class = NoSuchWindowException
+        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:
+            exception_class = StaleElementReferenceException
+        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:
+            exception_class = ElementNotVisibleException
+        elif status in ErrorCode.INVALID_ELEMENT_STATE:
+            exception_class = InvalidElementStateException
+        elif status in ErrorCode.INVALID_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:
+            exception_class = InvalidSelectorException
+        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:
+            exception_class = ElementNotSelectableException
+        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:
+            exception_class = ElementNotInteractableException
+        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:
+            exception_class = InvalidCookieDomainException
+        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:
+            exception_class = UnableToSetCookieException
+        elif status in ErrorCode.TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.SCRIPT_TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.UNKNOWN_ERROR:
+            exception_class = WebDriverException
+        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:
+            exception_class = UnexpectedAlertPresentException
+        elif status in ErrorCode.NO_ALERT_OPEN:
+            exception_class = NoAlertPresentException
+        elif status in ErrorCode.IME_NOT_AVAILABLE:
+            exception_class = ImeNotAvailableException
+        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:
+            exception_class = ImeActivationFailedException
+        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:
+            exception_class = MoveTargetOutOfBoundsException
+        elif status in ErrorCode.JAVASCRIPT_ERROR:
+            exception_class = JavascriptException
+        elif status in ErrorCode.SESSION_NOT_CREATED:
+            exception_class = SessionNotCreatedException
+        elif status in ErrorCode.INVALID_ARGUMENT:
+            exception_class = InvalidArgumentException
+        elif status in ErrorCode.NO_SUCH_COOKIE:
+            exception_class = NoSuchCookieException
+        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:
+            exception_class = ScreenshotException
+        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:
+            exception_class = ElementClickInterceptedException
+        elif status in ErrorCode.INSECURE_CERTIFICATE:
+            exception_class = InsecureCertificateException
+        elif status in ErrorCode.INVALID_COORDINATES:
+            exception_class = InvalidCoordinatesException
+        elif status in ErrorCode.INVALID_SESSION_ID:
+            exception_class = InvalidSessionIdException
+        elif status in ErrorCode.UNKNOWN_METHOD:
+            exception_class = UnknownMethodException
+        else:
+            exception_class = WebDriverException
+        if not value:
+            value = response['value']
+        if isinstance(value, str):
+            raise exception_class(value)
+        if message == "" and 'message' in value:
+            message = value['message']
+    
+        screen = None  # type: ignore[assignment]
+        if 'screen' in value:
+            screen = value['screen']
+    
+        stacktrace = None
+        st_value = value.get('stackTrace') or value.get('stacktrace')
+        if st_value:
+            if isinstance(st_value, str):
+                stacktrace = st_value.split('\n')
+            else:
+                stacktrace = []
+                try:
+                    for frame in st_value:
+                        line = self._value_or_default(frame, 'lineNumber', '')
+                        file = self._value_or_default(frame, 'fileName', '&lt;anonymous&gt;')
+                        if line:
+                            file = "%s:%s" % (file, line)
+                        meth = self._value_or_default(frame, 'methodName', '&lt;anonymous&gt;')
+                        if 'className' in frame:
+                            meth = "%s.%s" % (frame['className'], meth)
+                        msg = "    at %s (%s)"
+                        msg = msg % (meth, file)
+                        stacktrace.append(msg)
+                except TypeError:
+                    pass
+        if exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if 'data' in value:
+                alert_text = value['data'].get('text')
+            elif 'alert' in value:
+                alert_text = value['alert'].get('text')
+            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here
+&gt;       raise exception_class(message, screen, stacktrace)
+E       selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//td[text()='07/25/22, 12:45:14 PM']/../td[5]"}
+E         (Session info: chrome=103.0.5060.114)
+E       Stacktrace:
+E       Backtrace:
+E       	Ordinal0 [0x01175FD3+2187219]
+E       	Ordinal0 [0x0110E6D1+1763025]
+E       	Ordinal0 [0x01023E78+802424]
+E       	Ordinal0 [0x01051C10+990224]
+E       	Ordinal0 [0x01051EAB+990891]
+E       	Ordinal0 [0x0107EC92+1174674]
+E       	Ordinal0 [0x0106CBD4+1100756]
+E       	Ordinal0 [0x0107CFC2+1167298]
+E       	Ordinal0 [0x0106C9A6+1100198]
+E       	Ordinal0 [0x01046F80+946048]
+E       	Ordinal0 [0x01047E76+949878]
+E       	GetHandleVerifier [0x014190C2+2721218]
+E       	GetHandleVerifier [0x0140AAF0+2662384]
+E       	GetHandleVerifier [0x0120137A+526458]
+E       	GetHandleVerifier [0x01200416+522518]
+E       	Ordinal0 [0x01114EAB+1789611]
+E       	Ordinal0 [0x011197A8+1808296]
+E       	Ordinal0 [0x01119895+1808533]
+E       	Ordinal0 [0x011226C1+1844929]
+E       	BaseThreadInitThunk [0x778DFA29+25]
+E       	RtlGetAppContainerNamedObjectPath [0x77A87A9E+286]
+E       	RtlGetAppContainerNamedObjectPath [0x77A87A6E+238]
+
+f:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py:247: NoSuchElementException</failure></testcase><testcase classname="test_VSTS31382" name="test_order_print_report" time="90.105" /><testcase classname="test_VSTS43508" name="test_modify_booth" time="105.338" /><testcase classname="test_VSTS29639.TestEdit" name="test_Order" time="96.336" /><testcase classname="test_VSTS41201" name="test_Materials_Search" time="105.438" /><testcase classname="test_VSTS45751" name="test_campaigns_report" time="68.647"><failure message="selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type=&quot;button&quot; class=&quot;gwt-Button OkStyle&quot; id=&quot;Dialogbox_Bottom_..._Button_Id&quot;&gt;OK&lt;/button&gt; is not clickable at point (932, 548). Other element would receive the click: &lt;div class=&quot;gwt-PopupPanelGlass&quot; style=&quot;position: fixed; left: 0px; top: 0px; display: block; width: 1689px; height: 1163px;&quot;&gt;&lt;/div&gt;&#10;  (Session info: chrome=103.0.5060.114)&#10;Stacktrace:&#10;Backtrace:&#10;&#09;Ordinal0 [0x01175FD3+2187219]&#10;&#09;Ordinal0 [0x0110E6D1+1763025]&#10;&#09;Ordinal0 [0x01023E78+802424]&#10;&#09;Ordinal0 [0x0105834B+1016651]&#10;&#09;Ordinal0 [0x01056318+1008408]&#10;&#09;Ordinal0 [0x0105401B+999451]&#10;&#09;Ordinal0 [0x01052D69+994665]&#10;&#09;Ordinal0 [0x010489B3+952755]&#10;&#09;Ordinal0 [0x0106CB8C+1100684]&#10;&#09;Ordinal0 [0x01048394+951188]&#10;&#09;Ordinal0 [0x0106CDA4+1101220]&#10;&#09;Ordinal0 [0x0107CFC2+1167298]&#10;&#09;Ordinal0 [0x0106C9A6+1100198]&#10;&#09;Ordinal0 [0x01046F80+946048]&#10;&#09;Ordinal0 [0x01047E76+949878]&#10;&#09;GetHandleVerifier [0x014190C2+2721218]&#10;&#09;GetHandleVerifier [0x0140AAF0+2662384]&#10;&#09;GetHandleVerifier [0x0120137A+526458]&#10;&#09;GetHandleVerifier [0x01200416+522518]&#10;&#09;Ordinal0 [0x01114EAB+1789611]&#10;&#09;Ordinal0 [0x011197A8+1808296]&#10;&#09;Ordinal0 [0x01119895+1808533]&#10;&#09;Ordinal0 [0x011226C1+1844929]&#10;&#09;BaseThreadInitThunk [0x778DFA29+25]&#10;&#09;RtlGetAppContainerNamedObjectPath [0x77A87A9E+286]&#10;&#09;RtlGetAppContainerNamedObjectPath [0x77A87A6E+238]">browser = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="568e6f5e1812e220ee4ad9267bac1b67")&gt;
+
+    def test_campaigns_report(browser):
+        config = configparser.ConfigParser()
+        config.read(r'..\data\config.ini')
+        user_fullname = config.get('login', 'user_fullname')
+        # add all permission
+        BaseFun(browser).grant_Allpermission()
+        # 1.Navigate to campaign page and make change
+        browser.find_element(By.XPATH, "//tr/td/div[text()='Order']").click()
+        time.sleep(5)
+        #  select a order, click Create campaign
+        i = 0
+        while i in range(10):
+            try:
+                browser.find_element(By.XPATH, "//td[text()='test3']")
+            except NoSuchElementException:
+                browser.find_element(By.XPATH, "//a[text()='Refresh']").click()
+                time.sleep(3)
+            i = i + 1
+        time.sleep(3)
+        select_order = browser.find_element(By.XPATH, "//td[text()='test3']")
+        time.sleep(3)
+        select_order.find_element(By.XPATH, "../td/span[@class='gwt-CheckBox']").click()
+        time.sleep(3)
+        browser.find_element(By.XPATH, "//button[@class='WDAnchor_Common_Image16_Style CreateCampaign_Image']").click()
+        time.sleep(3)
+        browser.find_element(By.XPATH, "//input[@class='WD_TextBox']").send_keys("CampaignReport")
+        time.sleep(3)
+        browser.find_element(By.ID, "Dialogbox_Bottom_OK_Button_Id").click()
+        time.sleep(3)
+&gt;       browser.find_element(By.XPATH, "//button[@class='gwt-Button OkStyle']").click()
+
+test_VSTS45751.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+f:\python\lib\site-packages\selenium\webdriver\remote\webelement.py:81: in click
+    self._execute(Command.CLICK_ELEMENT)
+f:\python\lib\site-packages\selenium\webdriver\remote\webelement.py:710: in _execute
+    return self._parent.execute(command, params)
+f:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py:425: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x0000012AFF2C0E80&gt;
+response = {'status': 400, 'value': '{"value":{"error":"element click intercepted","message":"element click intercepted: Element ...\n\\tRtlGetAppContainerNamedObjectPath [0x77A87A9E+286]\\n\\tRtlGetAppContainerNamedObjectPath [0x77A87A6E+238]\\n"}}'}
+
+    def check_response(self, response: Dict[str, Any]) -&gt; None:
+        """
+        Checks that a JSON response from the WebDriver does not have an error.
+    
+        :Args:
+         - response - The JSON response from the WebDriver server as a dictionary
+           object.
+    
+        :Raises: If the response contains an error message.
+        """
+        status = response.get('status', None)
+        if not status or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen: str = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get('value', None)
+            if value_json and isinstance(value_json, str):
+                import json
+                try:
+                    value = json.loads(value_json)
+                    if len(value.keys()) == 1:
+                        value = value['value']
+                    status = value.get('error', None)
+                    if not status:
+                        status = value.get("status", ErrorCode.UNKNOWN_ERROR)
+                        message = value.get("value") or value.get("message")
+                        if not isinstance(message, str):
+                            value = message
+                            message = message.get('message')
+                    else:
+                        message = value.get('message', None)
+                except ValueError:
+                    pass
+    
+        exception_class: Type[WebDriverException]
+        if status in ErrorCode.NO_SUCH_ELEMENT:
+            exception_class = NoSuchElementException
+        elif status in ErrorCode.NO_SUCH_FRAME:
+            exception_class = NoSuchFrameException
+        elif status in ErrorCode.NO_SUCH_SHADOW_ROOT:
+            exception_class = NoSuchShadowRootException
+        elif status in ErrorCode.NO_SUCH_WINDOW:
+            exception_class = NoSuchWindowException
+        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:
+            exception_class = StaleElementReferenceException
+        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:
+            exception_class = ElementNotVisibleException
+        elif status in ErrorCode.INVALID_ELEMENT_STATE:
+            exception_class = InvalidElementStateException
+        elif status in ErrorCode.INVALID_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:
+            exception_class = InvalidSelectorException
+        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:
+            exception_class = ElementNotSelectableException
+        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:
+            exception_class = ElementNotInteractableException
+        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:
+            exception_class = InvalidCookieDomainException
+        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:
+            exception_class = UnableToSetCookieException
+        elif status in ErrorCode.TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.SCRIPT_TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.UNKNOWN_ERROR:
+            exception_class = WebDriverException
+        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:
+            exception_class = UnexpectedAlertPresentException
+        elif status in ErrorCode.NO_ALERT_OPEN:
+            exception_class = NoAlertPresentException
+        elif status in ErrorCode.IME_NOT_AVAILABLE:
+            exception_class = ImeNotAvailableException
+        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:
+            exception_class = ImeActivationFailedException
+        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:
+            exception_class = MoveTargetOutOfBoundsException
+        elif status in ErrorCode.JAVASCRIPT_ERROR:
+            exception_class = JavascriptException
+        elif status in ErrorCode.SESSION_NOT_CREATED:
+            exception_class = SessionNotCreatedException
+        elif status in ErrorCode.INVALID_ARGUMENT:
+            exception_class = InvalidArgumentException
+        elif status in ErrorCode.NO_SUCH_COOKIE:
+            exception_class = NoSuchCookieException
+        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:
+            exception_class = ScreenshotException
+        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:
+            exception_class = ElementClickInterceptedException
+        elif status in ErrorCode.INSECURE_CERTIFICATE:
+            exception_class = InsecureCertificateException
+        elif status in ErrorCode.INVALID_COORDINATES:
+            exception_class = InvalidCoordinatesException
+        elif status in ErrorCode.INVALID_SESSION_ID:
+            exception_class = InvalidSessionIdException
+        elif status in ErrorCode.UNKNOWN_METHOD:
+            exception_class = UnknownMethodException
+        else:
+            exception_class = WebDriverException
+        if not value:
+            value = response['value']
+        if isinstance(value, str):
+            raise exception_class(value)
+        if message == "" and 'message' in value:
+            message = value['message']
+    
+        screen = None  # type: ignore[assignment]
+        if 'screen' in value:
+            screen = value['screen']
+    
+        stacktrace = None
+        st_value = value.get('stackTrace') or value.get('stacktrace')
+        if st_value:
+            if isinstance(st_value, str):
+                stacktrace = st_value.split('\n')
+            else:
+                stacktrace = []
+                try:
+                    for frame in st_value:
+                        line = self._value_or_default(frame, 'lineNumber', '')
+                        file = self._value_or_default(frame, 'fileName', '&lt;anonymous&gt;')
+                        if line:
+                            file = "%s:%s" % (file, line)
+                        meth = self._value_or_default(frame, 'methodName', '&lt;anonymous&gt;')
+                        if 'className' in frame:
+                            meth = "%s.%s" % (frame['className'], meth)
+                        msg = "    at %s (%s)"
+                        msg = msg % (meth, file)
+                        stacktrace.append(msg)
+                except TypeError:
+                    pass
+        if exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if 'data' in value:
+                alert_text = value['data'].get('text')
+            elif 'alert' in value:
+                alert_text = value['alert'].get('text')
+            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here
+&gt;       raise exception_class(message, screen, stacktrace)
+E       selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="button" class="gwt-Button OkStyle" id="Dialogbox_Bottom_..._Button_Id"&gt;OK&lt;/button&gt; is not clickable at point (932, 548). Other element would receive the click: &lt;div class="gwt-PopupPanelGlass" style="position: fixed; left: 0px; top: 0px; display: block; width: 1689px; height: 1163px;"&gt;&lt;/div&gt;
+E         (Session info: chrome=103.0.5060.114)
+E       Stacktrace:
+E       Backtrace:
+E       	Ordinal0 [0x01175FD3+2187219]
+E       	Ordinal0 [0x0110E6D1+1763025]
+E       	Ordinal0 [0x01023E78+802424]
+E       	Ordinal0 [0x0105834B+1016651]
+E       	Ordinal0 [0x01056318+1008408]
+E       	Ordinal0 [0x0105401B+999451]
+E       	Ordinal0 [0x01052D69+994665]
+E       	Ordinal0 [0x010489B3+952755]
+E       	Ordinal0 [0x0106CB8C+1100684]
+E       	Ordinal0 [0x01048394+951188]
+E       	Ordinal0 [0x0106CDA4+1101220]
+E       	Ordinal0 [0x0107CFC2+1167298]
+E       	Ordinal0 [0x0106C9A6+1100198]
+E       	Ordinal0 [0x01046F80+946048]
+E       	Ordinal0 [0x01047E76+949878]
+E       	GetHandleVerifier [0x014190C2+2721218]
+E       	GetHandleVerifier [0x0140AAF0+2662384]
+E       	GetHandleVerifier [0x0120137A+526458]
+E       	GetHandleVerifier [0x01200416+522518]
+E       	Ordinal0 [0x01114EAB+1789611]
+E       	Ordinal0 [0x011197A8+1808296]
+E       	Ordinal0 [0x01119895+1808533]
+E       	Ordinal0 [0x011226C1+1844929]
+E       	BaseThreadInitThunk [0x778DFA29+25]
+E       	RtlGetAppContainerNamedObjectPath [0x77A87A9E+286]
+E       	RtlGetAppContainerNamedObjectPath [0x77A87A6E+238]
+
+f:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py:247: ElementClickInterceptedException</failure></testcase><testcase classname="test_VSTS43382" name="test_order_add_material" time="74.836"><failure message="selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type=&quot;button&quot; class=&quot;gwt-Button OkStyle&quot; id=&quot;Dialogbox_Bottom_..._Button_Id&quot;&gt;OK&lt;/button&gt; is not clickable at point (938, 552). Other element would receive the click: &lt;div class=&quot;gwt-PopupPanelGlass&quot; style=&quot;position: fixed; left: 0px; top: 0px; display: block; width: 1689px; height: 1166px;&quot;&gt;&lt;/div&gt;&#10;  (Session info: chrome=103.0.5060.114)&#10;Stacktrace:&#10;Backtrace:&#10;&#09;Ordinal0 [0x01175FD3+2187219]&#10;&#09;Ordinal0 [0x0110E6D1+1763025]&#10;&#09;Ordinal0 [0x01023E78+802424]&#10;&#09;Ordinal0 [0x0105834B+1016651]&#10;&#09;Ordinal0 [0x01056318+1008408]&#10;&#09;Ordinal0 [0x0105401B+999451]&#10;&#09;Ordinal0 [0x01052D69+994665]&#10;&#09;Ordinal0 [0x010489B3+952755]&#10;&#09;Ordinal0 [0x0106CB8C+1100684]&#10;&#09;Ordinal0 [0x01048394+951188]&#10;&#09;Ordinal0 [0x0106CDA4+1101220]&#10;&#09;Ordinal0 [0x0107CFC2+1167298]&#10;&#09;Ordinal0 [0x0106C9A6+1100198]&#10;&#09;Ordinal0 [0x01046F80+946048]&#10;&#09;Ordinal0 [0x01047E76+949878]&#10;&#09;GetHandleVerifier [0x014190C2+2721218]&#10;&#09;GetHandleVerifier [0x0140AAF0+2662384]&#10;&#09;GetHandleVerifier [0x0120137A+526458]&#10;&#09;GetHandleVerifier [0x01200416+522518]&#10;&#09;Ordinal0 [0x01114EAB+1789611]&#10;&#09;Ordinal0 [0x011197A8+1808296]&#10;&#09;Ordinal0 [0x01119895+1808533]&#10;&#09;Ordinal0 [0x011226C1+1844929]&#10;&#09;BaseThreadInitThunk [0x778DFA29+25]&#10;&#09;RtlGetAppContainerNamedObjectPath [0x77A87A9E+286]&#10;&#09;RtlGetAppContainerNamedObjectPath [0x77A87A6E+238]">browser = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="10832c79c08929bfbcd43ba4b15d09b8")&gt;
+
+    def test_order_add_material(browser):
+        # add all permission
+        BaseFun(browser).grant_Allpermission()
+        # 1.Navigate to order page and Create campaign
+        # test1
+        browser.find_element(By.XPATH, "//tr/td/div[text()='Order']").click()
+        time.sleep(5)
+        #  select a order
+        i = 0
+        while i in range(10):
+            try:
+                browser.find_element(By.XPATH, "//td[text()='test3']")
+            except NoSuchElementException:
+                browser.find_element(By.XPATH, "//a[text()='Refresh']").click()
+                time.sleep(3)
+            i = i + 1
+        time.sleep(3)
+        select_order = browser.find_element(By.XPATH, "//td[text()='test3']")
+        time.sleep(3)
+        select_order.find_element(By.XPATH, "..//td/span[@class='gwt-CheckBox']").click()
+        time.sleep(3)
+        status = select_order.find_element(By.XPATH, "../td[7]").text
+        time.sleep(3)
+        # active order
+        if status == "Planned":
+            browser.find_element(By.XPATH, "//button[@class='WDAnchor_Common_Image16_Style OrderActivate_Image']").click()
+            time.sleep(3)
+        assert "Active" == select_order.find_element(By.XPATH, "../td[7]").text
+        time.sleep(3)
+        # check sequence
+        force_sequence = select_order.find_element(By.XPATH, "../td[15]").text
+        result = ["Yes", "No"]
+        assert force_sequence in result
+        # click Create campaign
+        browser.find_element(By.XPATH, "//button[@class='WDAnchor_Common_Image16_Style CreateCampaign_Image']").click()
+        time.sleep(3)
+        browser.find_element(By.XPATH, "//input[@class='WD_TextBox']").send_keys("CampaignMaterial")
+        time.sleep(3)
+        browser.find_element(By.ID, "Dialogbox_Bottom_OK_Button_Id").click()
+        time.sleep(3)
+&gt;       browser.find_element(By.XPATH, "//button[@class='gwt-Button OkStyle']").click()
+
+test_VSTS43382.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+f:\python\lib\site-packages\selenium\webdriver\remote\webelement.py:81: in click
+    self._execute(Command.CLICK_ELEMENT)
+f:\python\lib\site-packages\selenium\webdriver\remote\webelement.py:710: in _execute
+    return self._parent.execute(command, params)
+f:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py:425: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x0000012AFF4B1880&gt;
+response = {'status': 400, 'value': '{"value":{"error":"element click intercepted","message":"element click intercepted: Element ...\n\\tRtlGetAppContainerNamedObjectPath [0x77A87A9E+286]\\n\\tRtlGetAppContainerNamedObjectPath [0x77A87A6E+238]\\n"}}'}
+
+    def check_response(self, response: Dict[str, Any]) -&gt; None:
+        """
+        Checks that a JSON response from the WebDriver does not have an error.
+    
+        :Args:
+         - response - The JSON response from the WebDriver server as a dictionary
+           object.
+    
+        :Raises: If the response contains an error message.
+        """
+        status = response.get('status', None)
+        if not status or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen: str = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get('value', None)
+            if value_json and isinstance(value_json, str):
+                import json
+                try:
+                    value = json.loads(value_json)
+                    if len(value.keys()) == 1:
+                        value = value['value']
+                    status = value.get('error', None)
+                    if not status:
+                        status = value.get("status", ErrorCode.UNKNOWN_ERROR)
+                        message = value.get("value") or value.get("message")
+                        if not isinstance(message, str):
+                            value = message
+                            message = message.get('message')
+                    else:
+                        message = value.get('message', None)
+                except ValueError:
+                    pass
+    
+        exception_class: Type[WebDriverException]
+        if status in ErrorCode.NO_SUCH_ELEMENT:
+            exception_class = NoSuchElementException
+        elif status in ErrorCode.NO_SUCH_FRAME:
+            exception_class = NoSuchFrameException
+        elif status in ErrorCode.NO_SUCH_SHADOW_ROOT:
+            exception_class = NoSuchShadowRootException
+        elif status in ErrorCode.NO_SUCH_WINDOW:
+            exception_class = NoSuchWindowException
+        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:
+            exception_class = StaleElementReferenceException
+        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:
+            exception_class = ElementNotVisibleException
+        elif status in ErrorCode.INVALID_ELEMENT_STATE:
+            exception_class = InvalidElementStateException
+        elif status in ErrorCode.INVALID_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:
+            exception_class = InvalidSelectorException
+        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:
+            exception_class = ElementNotSelectableException
+        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:
+            exception_class = ElementNotInteractableException
+        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:
+            exception_class = InvalidCookieDomainException
+        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:
+            exception_class = UnableToSetCookieException
+        elif status in ErrorCode.TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.SCRIPT_TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.UNKNOWN_ERROR:
+            exception_class = WebDriverException
+        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:
+            exception_class = UnexpectedAlertPresentException
+        elif status in ErrorCode.NO_ALERT_OPEN:
+            exception_class = NoAlertPresentException
+        elif status in ErrorCode.IME_NOT_AVAILABLE:
+            exception_class = ImeNotAvailableException
+        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:
+            exception_class = ImeActivationFailedException
+        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:
+            exception_class = MoveTargetOutOfBoundsException
+        elif status in ErrorCode.JAVASCRIPT_ERROR:
+            exception_class = JavascriptException
+        elif status in ErrorCode.SESSION_NOT_CREATED:
+            exception_class = SessionNotCreatedException
+        elif status in ErrorCode.INVALID_ARGUMENT:
+            exception_class = InvalidArgumentException
+        elif status in ErrorCode.NO_SUCH_COOKIE:
+            exception_class = NoSuchCookieException
+        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:
+            exception_class = ScreenshotException
+        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:
+            exception_class = ElementClickInterceptedException
+        elif status in ErrorCode.INSECURE_CERTIFICATE:
+            exception_class = InsecureCertificateException
+        elif status in ErrorCode.INVALID_COORDINATES:
+            exception_class = InvalidCoordinatesException
+        elif status in ErrorCode.INVALID_SESSION_ID:
+            exception_class = InvalidSessionIdException
+        elif status in ErrorCode.UNKNOWN_METHOD:
+            exception_class = UnknownMethodException
+        else:
+            exception_class = WebDriverException
+        if not value:
+            value = response['value']
+        if isinstance(value, str):
+            raise exception_class(value)
+        if message == "" and 'message' in value:
+            message = value['message']
+    
+        screen = None  # type: ignore[assignment]
+        if 'screen' in value:
+            screen = value['screen']
+    
+        stacktrace = None
+        st_value = value.get('stackTrace') or value.get('stacktrace')
+        if st_value:
+            if isinstance(st_value, str):
+                stacktrace = st_value.split('\n')
+            else:
+                stacktrace = []
+                try:
+                    for frame in st_value:
+                        line = self._value_or_default(frame, 'lineNumber', '')
+                        file = self._value_or_default(frame, 'fileName', '&lt;anonymous&gt;')
+                        if line:
+                            file = "%s:%s" % (file, line)
+                        meth = self._value_or_default(frame, 'methodName', '&lt;anonymous&gt;')
+                        if 'className' in frame:
+                            meth = "%s.%s" % (frame['className'], meth)
+                        msg = "    at %s (%s)"
+                        msg = msg % (meth, file)
+                        stacktrace.append(msg)
+                except TypeError:
+                    pass
+        if exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if 'data' in value:
+                alert_text = value['data'].get('text')
+            elif 'alert' in value:
+                alert_text = value['alert'].get('text')
+            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here
+&gt;       raise exception_class(message, screen, stacktrace)
+E       selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="button" class="gwt-Button OkStyle" id="Dialogbox_Bottom_..._Button_Id"&gt;OK&lt;/button&gt; is not clickable at point (938, 552). Other element would receive the click: &lt;div class="gwt-PopupPanelGlass" style="position: fixed; left: 0px; top: 0px; display: block; width: 1689px; height: 1166px;"&gt;&lt;/div&gt;
+E         (Session info: chrome=103.0.5060.114)
+E       Stacktrace:
+E       Backtrace:
+E       	Ordinal0 [0x01175FD3+2187219]
+E       	Ordinal0 [0x0110E6D1+1763025]
+E       	Ordinal0 [0x01023E78+802424]
+E       	Ordinal0 [0x0105834B+1016651]
+E       	Ordinal0 [0x01056318+1008408]
+E       	Ordinal0 [0x0105401B+999451]
+E       	Ordinal0 [0x01052D69+994665]
+E       	Ordinal0 [0x010489B3+952755]
+E       	Ordinal0 [0x0106CB8C+1100684]
+E       	Ordinal0 [0x01048394+951188]
+E       	Ordinal0 [0x0106CDA4+1101220]
+E       	Ordinal0 [0x0107CFC2+1167298]
+E       	Ordinal0 [0x0106C9A6+1100198]
+E       	Ordinal0 [0x01046F80+946048]
+E       	Ordinal0 [0x01047E76+949878]
+E       	GetHandleVerifier [0x014190C2+2721218]
+E       	GetHandleVerifier [0x0140AAF0+2662384]
+E       	GetHandleVerifier [0x0120137A+526458]
+E       	GetHandleVerifier [0x01200416+522518]
+E       	Ordinal0 [0x01114EAB+1789611]
+E       	Ordinal0 [0x011197A8+1808296]
+E       	Ordinal0 [0x01119895+1808533]
+E       	Ordinal0 [0x011226C1+1844929]
+E       	BaseThreadInitThunk [0x778DFA29+25]
+E       	RtlGetAppContainerNamedObjectPath [0x77A87A9E+286]
+E       	RtlGetAppContainerNamedObjectPath [0x77A87A6E+238]
+
+f:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py:247: ElementClickInterceptedException</failure></testcase><testcase classname="test_VSTS37540" name="test_BOMDelete" time="88.037"><failure message="assert 'Save was successful' in 'The BOM version of a pending status product code already exists. Please enter a unique one!'&#10; +  where 'The BOM version of a pending status product code already exists. Please enter a unique one!' = &lt;bound method BaseFun.get_AlterMessage of &lt;common.baseFun.BaseFun object at 0x0000012AFF3320A0&gt;&gt;()&#10; +    where &lt;bound method BaseFun.get_AlterMessage of &lt;common.baseFun.BaseFun object at 0x0000012AFF3320A0&gt;&gt; = &lt;common.baseFun.BaseFun object at 0x0000012AFF3320A0&gt;.get_AlterMessage&#10; +      where &lt;common.baseFun.BaseFun object at 0x0000012AFF3320A0&gt; = BaseFun(&lt;selenium.webdriver.chrome.webdriver.WebDriver (session=&quot;24714fb0095669e52a975553e2691b53&quot;)&gt;)">browser = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="24714fb0095669e52a975553e2691b53")&gt;
+
+    def test_BOMDelete(browser):
+        time.sleep(5)
+        BaseFun(browser).grant_Allpermission()
+        browser.find_element(By.XPATH, "//tr/td/div[text()='Material']").click()
+        browser.find_element(By.XPATH, "//tr/td/div[text()='BOM Exceptions']").click()
+        time.sleep(10)
+        # add a pending BOM
+        bomName = BaseFun(browser).Random_Str(5)
+        MaterialPage(browser).Add_BOM(bomName)
+        pending_xpath = "//td[text()='" + bomName + "']/../td[12]"
+&gt;       assert "Save was successful" in BaseFun(browser).get_AlterMessage()
+E       assert 'Save was successful' in 'The BOM version of a pending status product code already exists. Please enter a unique one!'
+E        +  where 'The BOM version of a pending status product code already exists. Please enter a unique one!' = &lt;bound method BaseFun.get_AlterMessage of &lt;common.baseFun.BaseFun object at 0x0000012AFF3320A0&gt;&gt;()
+E        +    where &lt;bound method BaseFun.get_AlterMessage of &lt;common.baseFun.BaseFun object at 0x0000012AFF3320A0&gt;&gt; = &lt;common.baseFun.BaseFun object at 0x0000012AFF3320A0&gt;.get_AlterMessage
+E        +      where &lt;common.baseFun.BaseFun object at 0x0000012AFF3320A0&gt; = BaseFun(&lt;selenium.webdriver.chrome.webdriver.WebDriver (session="24714fb0095669e52a975553e2691b53")&gt;)
+
+test_VSTS37540.py:20: AssertionError</failure></testcase></testsuite></testsuites>
