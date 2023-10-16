@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProductionSchedule xmlns="http://www.wbf.org/xml/B2MML-V0401">
+  <ProductionRequest>
+    <ID>wdmvt</ID>
+    <SegmentRequirement>
+      <ID>WD</ID>
+      <ProductionParameter>
+        <Parameter>
+          <ID>Recipe</ID>
+          <Value>
+            <ValueString>WD_RPL1</ValueString>
+            <DataType>string</DataType>
+            <UnitOfMeasure />
+          </Value>
+        </Parameter>
+      </ProductionParameter>
+      <MaterialRequirement>
+        <MaterialDefinitionID>1902</MaterialDefinitionID>
+        <Description>25mM HEPS, 100mM NaCI, pH 8.00</Description>
+        <MaterialUse>Produced</MaterialUse>
+        <Quantity>
+          <QuantityString>1000.000</QuantityString>
+          <DataType>decimal</DataType>
+          <UnitOfMeasure>G</UnitOfMeasure>
+        </Quantity>
+      </MaterialRequirement>
+      <SegmentRequirement>
+        <ID>EBsimple3_1</ID>
+        <MaterialRequirement>
+          <MaterialDefinitionID>1902</MaterialDefinitionID>
+          <MaterialLotID>001P</MaterialLotID>
+          <Description>25mM HEPS, 100mM NaCI, pH 8.00</Description>
+          <MaterialUse>Produced</MaterialUse>
+        </MaterialRequirement>
+      </SegmentRequirement>
+    </SegmentRequirement>
+    <RequestState>Forecast</RequestState>
+  </ProductionRequest>
+</ProductionSchedule>

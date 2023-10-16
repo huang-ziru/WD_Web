@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EquipmentInformation xmlns="http://www.wbf.org/xml/B2MML-V0401">
+  <Equipment>
+    <ID>booth1</ID>
+    <Description />
+    <EquipmentProperty>
+      <ID>Workstation</ID>
+      <Value>
+        <ValueString>WORKSTATION</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Status</ID>
+      <Value>
+        <ValueString>Usable</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>ExpirationDate</ID>
+      <Value>
+        <ValueString>2016-06-23T14:47:25.0</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LabelPrinterAddress</ID>
+      <Value>
+        <ValueString>\\shfile01\SH2530_R&amp;D</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>ReportPrinterAddress</ID>
+      <Value>
+        <ValueString>\\shfile01\SH2530_R&amp;D</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LastCleanDate</ID>
+      <Value>
+        <ValueString>2016-05-24T14:47:25.0</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LastCleanType</ID>
+      <Value>
+        <ValueString>Full Clean</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LastOrder</ID>
+      <Value>
+        <ValueString>test1</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LastMaterial</ID>
+      <Value>
+        <ValueString>1072</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CleanPeriod</ID>
+      <Value>
+        <ValueString>30</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>ApiCleanPeriod</ID>
+      <Value>
+        <ValueString>30</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>ExcCleanPeriod</ID>
+      <Value>
+        <ValueString>30</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+  </Equipment>
+  <Equipment>
+    <ID>booth2</ID>
+    <Description />
+    <EquipmentProperty>
+      <ID>Workstation</ID>
+      <Value>
+        <ValueString>WORKSTATION2</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Status</ID>
+      <Value>
+        <ValueString>Usable</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>ExpirationDate</ID>
+      <Value>
+        <ValueString>2014-09-02T23:22:59.0</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LabelPrinterAddress</ID>
+      <Value>
+        <ValueString>\\houprint2\Hou-Flr15-East-R&amp;D</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>ReportPrinterAddress</ID>
+      <Value>
+        <ValueString>\\houprint2\Hou-Flr15-East-R&amp;D</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LastCleanDate</ID>
+      <Value>
+        <ValueString>2014-08-03T23:22:59.0</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LastCleanType</ID>
+      <Value>
+        <ValueString>Full Clean</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CleanPeriod</ID>
+      <Value>
+        <ValueString>30</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>ApiCleanPeriod</ID>
+      <Value>
+        <ValueString>30</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>ExcCleanPeriod</ID>
+      <Value>
+        <ValueString>30</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+  </Equipment>
+  <Equipment>
+    <ID>booth3</ID>
+    <Description />
+    <EquipmentProperty>
+      <ID>Workstation</ID>
+      <Value>
+        <ValueString>lab331s2012.dev.aspentech.com</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Status</ID>
+      <Value>
+        <ValueString>Usable</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>ExpirationDate</ID>
+      <Value>
+        <ValueString>2016-06-23T14:47:25.0</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LabelPrinterAddress</ID>
+      <Value>
+        <ValueString>\\shfile01\SH2530_R&amp;D</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>ReportPrinterAddress</ID>
+      <Value>
+        <ValueString>\\shfile01\SH2530_R&amp;D</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LastCleanDate</ID>
+      <Value>
+        <ValueString>2016-05-24T14:47:25.0</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LastCleanType</ID>
+      <Value>
+        <ValueString>Full Clean</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LastOrder</ID>
+      <Value>
+        <ValueString>test1</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LastMaterial</ID>
+      <Value>
+        <ValueString>1072</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CleanPeriod</ID>
+      <Value>
+        <ValueString>30</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>ApiCleanPeriod</ID>
+      <Value>
+        <ValueString>30</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>ExcCleanPeriod</ID>
+      <Value>
+        <ValueString>30</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+  </Equipment>
+</EquipmentInformation>

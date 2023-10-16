@@ -1,0 +1,1248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EquipmentInformation xmlns="http://www.wbf.org/xml/B2MML-V0401">
+  <Equipment>
+    <ID>PL1501-S</ID>
+    <Description>Mettler-Toledo PM1000(1Kg)</Description>
+    <EquipmentProperty>
+      <ID>Status</ID>
+      <Value>
+        <ValueString>Maintain</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Brand</ID>
+      <Value>
+        <ValueString>Mettler</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Model</ID>
+      <Value>
+        <ValueString>PM1000</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>SerialId</ID>
+      <Value>
+        <ValueString>1203122210</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>RangeMinimum</ID>
+      <Value>
+        <ValueString>1</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>RangeMaximum</ID>
+      <Value>
+        <ValueString>1500</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Resolution</ID>
+      <Value>
+        <ValueString>0.1</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>TareMinimum</ID>
+      <Value>
+        <ValueString>1</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>TareMaximum</ID>
+      <Value>
+        <ValueString>300</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CommAddress</ID>
+      <Value>
+        <ValueString>com6:2400,e,7,1</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CommProtocol</ID>
+      <Value>
+        <ValueString>Mettler</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LastCalibrationDate</ID>
+      <Value>
+        <ValueString>2013-08-26T01:25:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Standardization</ID>
+      <Value>
+        <ValueString>2021-08-26T01:25:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationLastCheckDate</Key>
+      </Value>
+      <Value>
+        <ValueString>888</ValueString>
+        <DataType>integer</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationPeriod</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-daily</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>W100g</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>100g load</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>95</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>105</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-daily</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>W500g</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>500g load</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>495</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>505</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-daily</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentClassID>Weigh Scale</EquipmentClassID>
+    <Location>
+      <EquipmentID>booth2</EquipmentID>
+      <EquipmentElementLevel>WorkCenter</EquipmentElementLevel>
+    </Location>
+  </Equipment>
+  <Equipment>
+    <ID>PL601-L</ID>
+    <Description>Mettler-Toledo PM1000(1Kg)</Description>
+    <EquipmentProperty>
+      <ID>Status</ID>
+      <Value>
+        <ValueString>Maintain</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Brand</ID>
+      <Value>
+        <ValueString>Mettler</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Model</ID>
+      <Value>
+        <ValueString>PL601-L</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>SerialId</ID>
+      <Value>
+        <ValueString>B249594007</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>RangeMinimum</ID>
+      <Value>
+        <ValueString>5</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>RangeMaximum</ID>
+      <Value>
+        <ValueString>610</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Resolution</ID>
+      <Value>
+        <ValueString>0.1</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>TareMinimum</ID>
+      <Value>
+        <ValueString>5</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>TareMaximum</ID>
+      <Value>
+        <ValueString>300</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CommAddress</ID>
+      <Value>
+        <ValueString>com1:2400,e,7,1</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CommProtocol</ID>
+      <Value>
+        <ValueString>Mettler</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LastCalibrationDate</ID>
+      <Value>
+        <ValueString>2013-08-26T01:25:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CalibrationExpirationDate</ID>
+      <Value>
+        <ValueString>2019-08-27T00:00:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Standardization</ID>
+      <Value>
+        <ValueString>2013-08-26T01:25:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationLastCheckDate</Key>
+      </Value>
+      <Value>
+        <ValueString>2013-08-27T01:25:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationDate</Key>
+      </Value>
+      <Value>
+        <ValueString>1</ValueString>
+        <DataType>integer</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationPeriod</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-daily</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>W100g</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>100g load</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>95</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>105</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-daily</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>W500g</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>500g load</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>495</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>505</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-daily</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentClassID>Weigh Scale</EquipmentClassID>
+    <Location>
+      <EquipmentID>booth1</EquipmentID>
+      <EquipmentElementLevel>WorkCenter</EquipmentElementLevel>
+    </Location>
+  </Equipment>
+  <Equipment>
+    <ID>simulator</ID>
+    <Description>Sartorius</Description>
+    <EquipmentProperty>
+      <ID>Status</ID>
+      <Value>
+        <ValueString>Ready</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Brand</ID>
+      <Value>
+        <ValueString>Sartorius</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Model</ID>
+      <Value>
+        <ValueString>PM2000</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>SerialId</ID>
+      <Value>
+        <ValueString>28991006</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>RangeMinimum</ID>
+      <Value>
+        <ValueString>1</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>RangeMaximum</ID>
+      <Value>
+        <ValueString>1000</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Resolution</ID>
+      <Value>
+        <ValueString>0.1</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>TareMinimum</ID>
+      <Value>
+        <ValueString>1</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>TareMaximum</ID>
+      <Value>
+        <ValueString>300</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CommAddress</ID>
+      <Value>
+        <ValueString>com1:2400,o,7,1</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CommProtocol</ID>
+      <Value>
+        <ValueString>Sartorius</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LastCalibrationDate</ID>
+      <Value>
+        <ValueString>2013-08-26T01:25:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CalibrationExpirationDate</ID>
+      <Value>
+        <ValueString>2024-03-16T05:14:53.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Standardization</ID>
+      <Value>
+        <ValueString>2023-04-06T19:00:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationLastCheckDate</Key>
+      </Value>
+      <Value>
+        <ValueString>2025-05-22T19:00:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationDate</Key>
+      </Value>
+      <Value>
+        <ValueString>777</ValueString>
+        <DataType>integer</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationPeriod</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-daily</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>SOP1234</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>test</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>95</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>105</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-daily</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Standardization</ID>
+      <Value>
+        <ValueString>2023-03-01T20:00:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationLastCheckDate</Key>
+      </Value>
+      <Value>
+        <ValueString>2025-08-05T19:00:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationDate</Key>
+      </Value>
+      <Value>
+        <ValueString>888</ValueString>
+        <DataType>integer</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationPeriod</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-monthly</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>ITest</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>yest</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>95</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>105</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-monthly</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>TTest</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>yest</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>495</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>505</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-monthly</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Standardization</ID>
+      <Value>
+        <ValueString>SOP1123</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>StandardOperatingProcedure</Key>
+      </Value>
+      <Value>
+        <ValueString>2022-09-14T19:00:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationLastCheckDate</Key>
+      </Value>
+      <Value>
+        <ValueString>2024-07-11T19:00:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationDate</Key>
+      </Value>
+      <Value>
+        <ValueString>666</ValueString>
+        <DataType>integer</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationPeriod</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-weekly</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>W100g</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>100g load</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>95</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>105</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-weekly</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>W500g</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>500g load</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>495</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>505</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-weekly</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentClassID>Weigh Scale</EquipmentClassID>
+    <Location>
+      <EquipmentID>booth1</EquipmentID>
+      <EquipmentElementLevel>WorkCenter</EquipmentElementLevel>
+    </Location>
+  </Equipment>
+  <Equipment>
+    <ID>simulator001</ID>
+    <Description>Sartorius001</Description>
+    <EquipmentProperty>
+      <ID>Status</ID>
+      <Value>
+        <ValueString>Ready</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Brand</ID>
+      <Value>
+        <ValueString>Sartorius</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Model</ID>
+      <Value>
+        <ValueString>PM2000</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>SerialId</ID>
+      <Value>
+        <ValueString>28991006</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>RangeMinimum</ID>
+      <Value>
+        <ValueString>1</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>RangeMaximum</ID>
+      <Value>
+        <ValueString>1000</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Resolution</ID>
+      <Value>
+        <ValueString>0.1</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>TareMinimum</ID>
+      <Value>
+        <ValueString>1</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>TareMaximum</ID>
+      <Value>
+        <ValueString>300</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CommAddress</ID>
+      <Value>
+        <ValueString>com1:2400,o,7,1</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CommProtocol</ID>
+      <Value>
+        <ValueString>Sartorius</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LastCalibrationDate</ID>
+      <Value>
+        <ValueString>2013-08-26T01:25:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CalibrationExpirationDate</ID>
+      <Value>
+        <ValueString>2024-03-16T05:14:53.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Standardization</ID>
+      <Value>
+        <ValueString>2023-04-06T06:27:14.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationLastCheckDate</Key>
+      </Value>
+      <Value>
+        <ValueString>2025-05-22T06:27:14.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationDate</Key>
+      </Value>
+      <Value>
+        <ValueString>777</ValueString>
+        <DataType>integer</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationPeriod</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-daily</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>SOP1234</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>test</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>95</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>105</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-daily</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Standardization</ID>
+      <Value>
+        <ValueString>2023-03-01T20:00:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationLastCheckDate</Key>
+      </Value>
+      <Value>
+        <ValueString>2025-08-05T19:00:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationDate</Key>
+      </Value>
+      <Value>
+        <ValueString>888</ValueString>
+        <DataType>integer</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationPeriod</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-monthly</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>TTest</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>yest</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>495</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>505</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-monthly</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Standardization</ID>
+      <Value>
+        <ValueString>SOP1123</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>StandardOperatingProcedure</Key>
+      </Value>
+      <Value>
+        <ValueString>2022-09-14T19:00:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationLastCheckDate</Key>
+      </Value>
+      <Value>
+        <ValueString>2024-07-11T19:00:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationDate</Key>
+      </Value>
+      <Value>
+        <ValueString>666</ValueString>
+        <DataType>integer</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationPeriod</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-weekly</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>W100g</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>100g load</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>95</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>105</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-weekly</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>W500g</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>500g load</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>495</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>505</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-weekly</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentClassID>Weigh Scale</EquipmentClassID>
+    <Location>
+      <EquipmentID>booth1</EquipmentID>
+      <EquipmentElementLevel>WorkCenter</EquipmentElementLevel>
+    </Location>
+  </Equipment>
+  <Equipment>
+    <ID>TE6101-L</ID>
+    <Description>Sartorius</Description>
+    <EquipmentProperty>
+      <ID>Status</ID>
+      <Value>
+        <ValueString>Maintain</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Brand</ID>
+      <Value>
+        <ValueString>Sartorius</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Model</ID>
+      <Value>
+        <ValueString>PM2000</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>SerialId</ID>
+      <Value>
+        <ValueString>28991006</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>RangeMinimum</ID>
+      <Value>
+        <ValueString>1</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>RangeMaximum</ID>
+      <Value>
+        <ValueString>1000</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Resolution</ID>
+      <Value>
+        <ValueString>1</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>TareMinimum</ID>
+      <Value>
+        <ValueString>1</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>TareMaximum</ID>
+      <Value>
+        <ValueString>10</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CommAddress</ID>
+      <Value>
+        <ValueString>com1:2400,o,7,1</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>CommProtocol</ID>
+      <Value>
+        <ValueString>Sartorius</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>LastCalibrationDate</ID>
+      <Value>
+        <ValueString>2013-09-17T11:00:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+      </Value>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Standardization</ID>
+      <Value>
+        <ValueString>2013-09-16T11:00:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationLastCheckDate</Key>
+      </Value>
+      <Value>
+        <ValueString>1</ValueString>
+        <DataType>integer</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationPeriod</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-daily</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>W100g</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>100g load</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>95</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>105</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-daily</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>W500g</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>500g load</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>495</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>505</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-daily</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>Standardization</ID>
+      <Value>
+        <ValueString>SOP1123</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>StandardOperatingProcedure</Key>
+      </Value>
+      <Value>
+        <ValueString>2013-08-16T11:00:00.000Z</ValueString>
+        <DataType>DateTime</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationLastCheckDate</Key>
+      </Value>
+      <Value>
+        <ValueString>7</ValueString>
+        <DataType>integer</DataType>
+        <UnitOfMeasure />
+        <Key>StandardizationExpirationPeriod</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-weekly</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>W100g</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>100g load</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>95</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>105</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-weekly</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentProperty>
+      <ID>StandardizationWeight</ID>
+      <Value>
+        <ValueString>W500g</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightTag</Key>
+      </Value>
+      <Value>
+        <ValueString>500g load</ValueString>
+        <DataType>string</DataType>
+        <UnitOfMeasure />
+        <Key>WeightDescription</Key>
+      </Value>
+      <Value>
+        <ValueString>495</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMinimum</Key>
+      </Value>
+      <Value>
+        <ValueString>505</ValueString>
+        <DataType>decimal</DataType>
+        <UnitOfMeasure>G</UnitOfMeasure>
+        <Key>WeightMaximum</Key>
+      </Value>
+      <EquipmentCapabilityTestSpecificationID>STD-weekly</EquipmentCapabilityTestSpecificationID>
+    </EquipmentProperty>
+    <EquipmentClassID>Weigh Scale</EquipmentClassID>
+    <Location>
+      <EquipmentID>booth1</EquipmentID>
+      <EquipmentElementLevel>WorkCenter</EquipmentElementLevel>
+    </Location>
+  </Equipment>
+</EquipmentInformation>
