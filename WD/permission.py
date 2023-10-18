@@ -22,7 +22,7 @@ def open_Chrome():
     driver.get(url)
     time.sleep(5)
     driver.find_element(By.XPATH, "//input[@class='gwt-TextBox']").click()
-    driver.find_element(By.XPATH, "//input[@class='gwt-TextBox']").send_keys("apem-c-d7\\administrator")
+    driver.find_element(By.XPATH, "//input[@class='gwt-TextBox']").send_keys("apem-c-d6\\administrator")
     driver.find_element(By.XPATH, "//input[@class='gwt-PasswordTextBox']").send_keys("Aspen100")
     driver.find_element(By.XPATH, "//button[@class='Home_Login_Button']").click()
     time.sleep(10)
